@@ -1,0 +1,12 @@
+# version defined for docker compose we want to use
+version: '3'
+
+# services use for container but not exactly a container but a type of container.
+services:
+  redis-server:
+    image: 'redis'
+
+  node-app:
+    build: .
+    ports:
+      - "4001:8081"

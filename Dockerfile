@@ -1,12 +1,10 @@
-# specify a base image
-
 FROM node:alpine
 
-# Install some dependencies
-WORKDIR /Docker/webapplication
-COPY ./package.json ./
-RUN npm install 
-COPY ./ ./
-# Default command
+WORKDIR '/app'
+
+COPY package.json .
+RUN npm install
+
+COPY . .
 
 CMD ["npm", "start"]
